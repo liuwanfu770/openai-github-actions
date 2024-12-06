@@ -20,6 +20,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install openai
 
+      - name: Debug Environment
+        run: |
+          python --version
+          which python
+          echo "Python and environment setup completed."
+
       - name: Test OpenAI API
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
